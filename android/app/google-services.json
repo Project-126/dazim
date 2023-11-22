@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "260425751157",
+    "project_id": "dazim-cd178",
+    "storage_bucket": "dazim-cd178.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260425751157:android:14ba7123281e0d2bb8f63c",
+        "android_client_info": {
+          "package_name": "com.dazim"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgENSmx3zB2xh4XV5_iKSttnJIXzf3ux4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
