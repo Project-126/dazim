@@ -1,5 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dazim">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:label="dazim"
         android:name="${applicationName}"
@@ -15,7 +19,8 @@
 
                 <!-- "kakao${YOUR_NATIVE_APP_KEY}://oauth" 형식의 앱 실행 스킴 설정 -->
                 <!-- 카카오 로그인 Redirect URI -->
-                <data android:scheme="kakao55ba371688d27fae6638b0267f1b8a9b" android:host="oauth"/>
+                <data android:scheme="kakao4c21339d23feaa25098d2f2d7c018096"
+                    android:host="oauth"/>
             </intent-filter>
         </activity>
 

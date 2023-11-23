@@ -16,8 +16,14 @@ class MainViewModel {
   }
 
   Future logout() async {
-    await _socialLogin.logout();
-    isLogined = false;
-    user = null;
+    // 로그인 상태를 확인하고 로그아웃 시도
+    if (isLogined) {
+      await _socialLogin.logout();
+      isLogined = false;
+      user = null;
+    } else {
+      print('User is not logged in.');
+    }
   }
 }
+

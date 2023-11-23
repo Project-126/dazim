@@ -11,6 +11,7 @@ class KakaoLogin implements SocialLogin {
           await UserApi.instance.loginWithKakaoTalk();
           return true;
         } catch (e) {
+          print("Error during login with KakaoTalk: $e");
           return false;
         }
       } else {
@@ -18,10 +19,12 @@ class KakaoLogin implements SocialLogin {
           await UserApi.instance.loginWithKakaoAccount();
           return true;
         } catch (e) {
+          print("Error during login with KakaoAccount: $e");
           return false;
         }
       }
     } catch (e) {
+      print("Error checking if KakaoTalk is installed: $e");
       return false;
     }
   }
@@ -32,8 +35,8 @@ class KakaoLogin implements SocialLogin {
       await UserApi.instance.unlink();
       return true;
     } catch (error) {
+      print("Error during logout: $error");
       return false;
     }
   }
-
 }

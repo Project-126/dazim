@@ -5,7 +5,7 @@ import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main()  {
-  KakaoSdk.init(nativeAppKey: '55ba371688d27fae6638b0267f1b8a9b');
+  KakaoSdk.init(nativeAppKey: '4c21339d23feaa25098d2f2d7c018096');
   runApp(const MyApp());
 }
 
@@ -51,12 +51,22 @@ class _MyHomePageState extends State<MyHomePage> {
                 viewModel.user?.kakaoAccount?.profile?.profileImageUrl ?? ''),
             Text(
               '${viewModel.isLogined}',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             ElevatedButton(
               onPressed: () async {
                 await viewModel.login();
-                setState(() {});
+                setState(() {
+                  if (viewModel.isLogined) {
+                    // 로그인 성공 후 다른 페이지로 이동
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AnotherPage(),
+                      ),
+                    );
+                  }
+                });
               },
               child: const Text('Login'),
             ),
@@ -69,6 +79,20 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class AnotherPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Another Page'),
+      ),
+      body: Center(
+        child: Text('Welcome to Another Page!'),
       ),
     );
   }
